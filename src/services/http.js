@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+axios.defaults.baseURL = 'https://api.github.com'
+
 const http = {
   get: axios.get,
   post: axios.post,
