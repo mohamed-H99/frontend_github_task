@@ -6,11 +6,13 @@ import {
 } from 'react-router-dom'
 import Home from './views/Home'
 import Error from './views/Error'
+import TheNavbar from './components/TheNavbar'
 
 function App() {
   return (
     <div className="App">
       <Router>
+        <TheNavbar />
         <Switch>
           <Route path="/" exact>
             <Home />
