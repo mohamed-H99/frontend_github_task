@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react'
 import { formatDistanceToNow } from 'date-fns'
 import './styles.css'

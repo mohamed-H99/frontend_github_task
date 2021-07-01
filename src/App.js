@@ -4,15 +4,18 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom'
+
 import Home from './views/Home'
 import Error from './views/Error'
+
 import TheNavbar from './components/TheNavbar'
+import TheFooter from './components/TheFooter'
 
 function App() {
   return (
     <div className="App">
+      <TheNavbar />
       <Router>
-        <TheNavbar />
         <Switch>
           <Route path="/" exact>
             <Home />
@@ -23,6 +26,7 @@ function App() {
           <Redirect to="/404" />
         </Switch>
       </Router>
+      <TheFooter />
     </div>
   )
 }

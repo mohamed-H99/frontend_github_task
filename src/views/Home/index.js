@@ -1,8 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, Suspense, lazy } from 'react'
 import { subDays, format } from 'date-fns'
-import CardWrapper from '../../components/CardWrapper'
+import TheLoader from '../../components/TheLoader'
 import api from '../../api'
 import './styles.css'
+
+const CardWrapper = lazy(() => import('../../components/CardWrapper'))
 
 export default function Home() {
   const [date, setDate] = useState('')
@@ -20,7 +22,7 @@ export default function Home() {
       setRepos(prev => {
         return {
           incomplete_results: data.incomplete_results,
-          items: prev.items.concat(data.items),
+          items: [...prev.items, ...data.items],
           total_count: data.total_count,
         }
       })
@@ -41,11 +43,10 @@ export default function Home() {
   }, [])
 
   return (
-    <div className="home-page container mx-auto">
-      <CardWrapper
-        onFetchNextPage={() => fetchGithubReposNextPage(date)}
-        items={repos.items}
-      />
-    </div>
+    <Suspense fallback={<TheLoader />}>
+      <div className="home-page container mx-auto">
+        <CardWrapper fetchMore={fetchGithubReposNextPage} items={repos.items} />
+      </div>
+    </Suspense>
   )
 }
