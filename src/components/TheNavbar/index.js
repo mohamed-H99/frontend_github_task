@@ -48,7 +48,7 @@ export default function TheNavbar() {
                 onSubmit={handleSearch}
                 className="absolute inset-y-0 right-auto flex items-start justify-center mt-3 sm:mt-0 sm:static sm:inset-auto sm:ml-6 sm:pr-0 mx-auto self-center">
                 <input
-                  className="bg-gray-50 pr-9 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-indigo-700"
+                  className="bg-gray-50 pr-9 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-700"
                   id="inline-full-name"
                   type="text"
                   placeholder="Search for..."
