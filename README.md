@@ -68,3 +68,22 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+# Used libraries
+
+This section contains libraries used in this project
+
+### date-fns
+
+date-fns provides the most comprehensive, yet simple and consistent toolset
+for manipulating JavaScript dates in a browser & Node.js.
+
+### tailwindcss
+
+Rapidly build modern websites without ever leaving your HTML.
+A utility-first CSS framework packed with classes like flex, pt-4, text-center and rotate-90 that can be composed to build any design, directly in your markup.
+
+### axios
+
+Promise based HTTP client for the browser and node.js
+Used this lib to handle api from github to fetch most starred repos
