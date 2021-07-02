@@ -1,7 +1,7 @@
 import React, { useState, useEffect, Suspense } from 'react'
 import { subDays, format } from 'date-fns'
 import TheLoader from '../../components/TheLoader'
-import CardWrapper from '../../components/CardWrapper'
+import CardsWrapper from '../../components/CardsWrapper'
 import api from '../../api'
 import './styles.css'
 
@@ -9,7 +9,6 @@ export default function Home() {
   const [date, setDate] = useState('')
   const [repos, setRepos] = useState({})
   const [currentPage, setCurrentPage] = useState(1)
-  const [loaded, setLoaded] = useState(false)
 
   const fetchRepos = async date => {
     const { data } = await api.getMostStarredRepos(date)
@@ -27,7 +26,7 @@ export default function Home() {
         }
       })
       setCurrentPage(prev => 1 + prev)
-    } else setLoaded(true)
+    }
   }
 
   useEffect(() => {
@@ -45,11 +44,7 @@ export default function Home() {
   return (
     <Suspense fallback={<TheLoader />}>
       <div className="home-page container mx-auto">
-        <CardWrapper
-          onFetchNextPage={fetchReposNextPage}
-          loaded={loaded}
-          items={repos.items}
-        />
+        <CardsWrapper onFetchNextPage={fetchReposNextPage} repos={repos} />
       </div>
     </Suspense>
   )

@@ -1,0 +1,31 @@
+.card {
+  @apply flex bg-gray-800 self-center flex-col w-full sm:w-9/12 shadow-lg hover:shadow-sm transition-shadow rounded p-3 sm:flex-row gap-3 justify-start;
+}
+
+.card-img {
+  @apply w-32 rounded shadow object-cover bg-gray-900;
+}
+
+.card-content {
+  @apply flex flex-col gap-2;
+}
+
+.card-title {
+  @apply text-gray-50 text-2xl;
+}
+
+.card-text {
+  @apply text-gray-100 text-sm;
+}
+
+.repo-info {
+  @apply sm:flex gap-2;
+}
+
+.repo-info span:not(:last-child) {
+  @apply text-white inline-block mr-2 mb-2 sm:mr-0 sm:mb-0 shadow text-sm bg-purple-700 rounded py-1 px-2;
+}
+
+.repo-info span:last-child {
+  @apply text-gray-100 text-sm leading-loose;
+}

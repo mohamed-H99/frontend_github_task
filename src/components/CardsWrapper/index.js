@@ -1,35 +1,37 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, lazy } from 'react'
 import TheLoader from '../TheLoader'
 import './styles.css'
 
 const Card = lazy(() => import('../Card'))
 
-export default function CardWrapper(props) {
+export default function CardsWrapper(props) {
   const [shownCount, setShownCount] = useState(20)
   const [loading, setLoading] = useState(true)
-  const shownItems = props.items?.slice(0, shownCount)
+  const shownItems = props.repos.items?.slice(0, shownCount)
 
   const loadMore = () => {
+    if (shownCount === props.repos.items?.length) {
+      props.onFetchNextPage()
+      setShownCount(prev => prev + 20)
+    } else setShownCount(prev => prev + 20)
+  }
+
+  useEffect(() => {
     window.onscroll = () => {
       if (
         window.innerHeight + document.documentElement.scrollTop ===
         document.scrollingElement.scrollHeight
       ) {
-        if (shownCount === props.items?.length) {
-          props.onFetchNextPage()
-          setShownCount(prev => prev + 20)
-        } else setShownCount(prev => prev + 20)
+        loadMore()
       }
     }
-  }
-
-  useEffect(() => {
-    loadMore()
-    if (props.loaded) setLoading(false)
+    if (!props.repos.incomplete_results && shownCount % 100 === 0)
+      setLoading(false)
   }, [shownCount, props])
 
   return (
-    <section className="card-wrapper flex align-center flex-col gap-3 m-5 sm:mx-0">
+    <section className="cards-wrapper align-center">
       {shownItems?.map(item => (
         <Card key={item.id} data={item} />
       ))}

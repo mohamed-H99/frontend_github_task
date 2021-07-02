@@ -1,0 +1,35 @@
+.navbar {
+  @apply max-w-7xl mx-auto px-2 sm:px-6 lg:px-8;
+}
+
+.navbar-wrapper {
+  @apply relative flex items-center flex-col-reverse sm:flex-row py-3;
+}
+
+.controllers {
+  @apply flex-1 flex items-center  justify-start sm:items-stretch self-center mt-16 sm:mt-0;
+}
+
+.controllers-wrapper {
+  @apply flex-shrink-0 flex items-center gap-2;
+}
+
+.controllers-wrapper button {
+  @apply bg-gray-800 p-1 rounded-full text-gray-400 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white;
+}
+
+.controllers-wrapper button > * {
+  @apply h-6 w-6 text-gray-50;
+}
+
+.search-form {
+  @apply absolute inset-y-0 right-auto flex items-start justify-center mt-3 sm:mt-0 sm:static sm:inset-auto sm:ml-6 sm:pr-0 mx-auto self-center;
+}
+
+.search-form .search-input {
+  @apply bg-gray-50 pr-9 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-700;
+}
+
+.search-form .search-icon {
+  @apply h-6 w-6 pl-1 text-gray-800 absolute right-3 top-2 sm:top-5;
+}

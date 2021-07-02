@@ -1,0 +1,3 @@
+.cards-wrapper {
+  @apply flex flex-col gap-3 m-5 sm:mx-0;
+}
