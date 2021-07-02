@@ -1,3 +1,7 @@
+## Overview of the demo
+
+Open [https://frontend-github-task.netlify.app/](https://frontend-github-task.netlify.app/) to view the demo
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
